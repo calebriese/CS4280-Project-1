@@ -35,14 +35,7 @@ int main(int argc, char *argv[])
 	    
 	ofstream tempFile;
         string filename = "temporaryFile.txt";
-        tempFile.open(filename, std::ios::trunc);
-
-
-        if (!tempFile)
-        {
-            cout << "Didnt create ";
-            exit(EXIT_FAILURE);
-        }
+        tempFile.open(filename);
 	
         bool notBlank = true;
         cout << "Reading from the keyboard until blank line is entered\n";
@@ -50,14 +43,13 @@ int main(int argc, char *argv[])
         {
             cout << "\nInput: ";
             getline(cin, inputString);
-            tempFile << inputString << endl;
             if (inputString.empty())
             {
                 notBlank = false;
-            }
+            }else {tempFile << inputString << endl;}
         }
 	tempFile.close();
-	file.open("temp.txt");	
+	file.open("temporaryFile.txt");	
     }
     else
     {
