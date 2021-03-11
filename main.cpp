@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include "testScanner.h"
 using namespace std;
 
