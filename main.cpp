@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
     else if (argc == 1)//read from the keyboard
     {
         string inputString;
-        char *tmpname = strdup("/tmp/calebTMPFile");
-        mkstemp(tmpname);
-        file.open(tmpname);
+        fstream tmpfile;
+	tmpfile.open("temp.txt");
+	
         bool notBlank = true;
         cout << "Reading from the keyboard until blank line is entered\n";
         while (notBlank)
@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
                 notBlank = false;
             }
         }
+	tmpfile.close();
+	file.open("temp.txt");	
     }
     else
     {
