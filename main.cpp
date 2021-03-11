@@ -31,11 +31,9 @@ int main(int argc, char *argv[])
     else if (argc == 1)//read from the keyboard
     {
         string inputString;
-        string inputFile = "tempFile";
         char *tmpname = strdup("/tmp/calebTMPFile");
         mkstemp(tmpname);
-        ofstream f(tmpname);
-        file = f;
+        file.open(tmpname);
         bool notBlank = true;
         cout << "Reading from the keyboard until blank line is entered\n";
         while (notBlank)
