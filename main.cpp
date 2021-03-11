@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
         string inputString;
         string inputFile = "tempFile";
         char *tmpname = strdup("/tmp/calebTMPFile");
-        int fd = mkstemp(tmpname);
-        file.attach(fd);
-        //file.open(inputFile);//creates a temporary file
+        mkstemp(tmpname);
+        ofstream f(tmpname);
+        file = f;
         bool notBlank = true;
         cout << "Reading from the keyboard until blank line is entered\n";
         while (notBlank)
