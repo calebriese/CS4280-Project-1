@@ -1,5 +1,6 @@
 #include "testScanner.h"
 #include "scanner.h"
+#include <cstdio>
 
 void TestScanner::test(fstream &file)//this is the testing function
 {
@@ -24,6 +25,7 @@ void TestScanner::test(fstream &file)//this is the testing function
         myToken.tokenInstance = "EOF";// simulate EOF token
         cout << "Line:" << myToken.lineNumber << ", Token: " << tokenNames[myToken.tokenID] << " Instance: "<< myToken.tokenInstance << endl;
         file.close();
+        remove("temporaryFile.txt");
     }
     else
     {
