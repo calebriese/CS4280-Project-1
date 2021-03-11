@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <fstream>
 #include "testScanner.h"
 using namespace std;
 
@@ -31,8 +32,17 @@ int main(int argc, char *argv[])
     else if (argc == 1)//read from the keyboard
     {
         string inputString;
-        fstream tmpfile;
-	tmpfile.open("temp.txt");
+	    
+	ofstream tempFile;
+        string filename = "temporaryFile.txt";
+        tempFile.open(filename, std::ios::trunc);
+
+
+        if (!tempFile)
+        {
+            cout << "Didnt create ";
+            exit(EXIT_FAILURE);
+        }
 	
         bool notBlank = true;
         cout << "Reading from the keyboard until blank line is entered\n";
@@ -40,13 +50,13 @@ int main(int argc, char *argv[])
         {
             cout << "\nInput: ";
             getline(cin, inputString);
-            file << inputString << endl;
+            tempFile << inputString << endl;
             if (inputString.empty())
             {
                 notBlank = false;
             }
         }
-	tmpfile.close();
+	tempFile.close();
 	file.open("temp.txt");	
     }
     else
