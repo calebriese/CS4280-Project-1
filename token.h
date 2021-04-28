@@ -35,8 +35,10 @@ const map<string,string> operatorMap = {
         {";","SemicolonToken"},
         {"[","OpenBracketToken"},
         {"]","CloseBracketToken"},
-        {"<","testToken"}
+        {"<","lessThanToken"},
+        {">","greaterThanToken"}
 };
+///If things are starting to break then remove the last two >< tokens from this ^
 const map<string,string> keywordMap = {
         {"begin","BeginToken"},
         {"end","EndToken"},
