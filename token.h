@@ -34,7 +34,8 @@ const map<string,string> operatorMap = {
         {"}","CloseBraceToken"},
         {";","SemicolonToken"},
         {"[","OpenBracketToken"},
-        {"]","CloseBracketToken"}
+        {"]","CloseBracketToken"},
+        {"<","testToken"}
 };
 const map<string,string> keywordMap = {
         {"begin","BeginToken"},
